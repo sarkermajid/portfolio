@@ -47,7 +47,7 @@ a:hover {
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
-@keyframes about-img {
+/* @keyframes about-img {
   0%{
     border: 1px solid rgba(255,0,0,0.3);
   }
@@ -63,7 +63,52 @@ a:hover {
   100%{
     border: 1px solid rgba(255,0,0,0.3);
   }
-}
+} */
+
+    .box {
+        position: relative;
+        width: 380px;
+        height: 420px;
+        text-align: center;
+        border-radius: 8px;
+        background: #1c1c1c;
+        overflow: hidden;
+    }
+
+    .box::before{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        background: linear-gradient(0deg, transparent,
+        #45f4ff, #45f4ff);
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+    }
+
+    .box::after{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        background: linear-gradient(0deg, transparent,
+        #45f4ff, #45f4ff);
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+        animation-delay: -3s;
+    }
+    @keyframes animate {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
 .about-text{
   color: #bdc3c7;
   font-size: 22px;
